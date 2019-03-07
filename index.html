@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+<meta name="description" content="">
+<meta name="generator" content="Grapedrop">
+
+<!-- Apple Stuff -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="description" content="">
+<meta itemprop="image" content="">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="http://206c779.grapedrop.com">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+        
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script>
+
+        
+        
+          <link rel="stylesheet" href="styles/base.css">
+          <link rel="stylesheet" href="styles/style.css">
+          
+    </head>
+
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+        </style>
+        <body><section class="gpd-section" id="i9sq"><div class="gpd-container" id="ity2"><div id="ia7c">GRAMMY AWARDS</div></div></section><div id="ivtq"></div><section class="gpd-section" id="ieoh4"><div class="gpd-container" id="iewyo"><img id="i9oec" src="images/c273bf0716754fc99c56d4e90bd48203_0.jpg"/><div id="iei3t"><div style="text-align: right;">Kevin Wilson/Getty Images</div></div><div id="ig9hg"><strong>At the Grammys, Sisters Dressing for Themselves</strong></div><div id="idoii">From Cardi B on the half shell to Michelle Obama in a silver lounge suit, women were front and center, our fashion critic writes.</div><div id="imky3">Feb. 11</div></div></section></body>
+        
+
+                 
+<a href="https://grapedrop.com" target="_blank" class="page-brand-badge">
+    <svg class="logo-circ" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:13px; height:13px; vertical-align: middle; margin-right: 3px; margin-top: -2px;">
+            <defs>
+                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+                    <stop stop-color="#EAB3D5" offset="0%"></stop>
+                    <stop stop-color="#D06E9A" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g>
+                    <circle fill="url(#linearGradient-2)" cx="251" cy="251" r="250"></circle>
+                    <path d="M244.664082,104.558858 L162.460627,248.205767 C145.186418,278.574619 143.852224,317.189676 162.460627,349.706818 C190.433829,398.588565 252.659,415.493783 301.444357,387.464755 C350.229714,359.436081 367.101474,297.087868 339.127919,248.205413 L256.924464,104.558858 C254.209082,99.813714 247.379111,99.813714 244.664082,104.558858 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </svg>
+        Made with Grapedrop
+</a>
+            </body>
+
+    <script>
+        var formStateName = 'data-form-state';
+        var formStateEls = $('[' + formStateName + ']');
+        formStateEls.hide();
+        $('form').submit(function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var action = (this.getAttribute('action') || '').trim();
+            var formData = new FormData(this);
+            var chkSelected = {};
+            var name = this.getAttribute('name');
+            name && formData.append('__name', name);
+
+            form.find('[type=radio], [type=checkbox]').each(function(item) {
+                var chkName = this.name;
+                if (this.checked) {
+                    chkSelected[chkName] = 1;
+                    return;
+                }
+                chkSelected[chkName] = 0;
+            });
+
+            for (var chk in chkSelected) {
+                if (!chkSelected[chk]) {
+                    formData.append(chk, '');
+                }
+            }
+
+            $.ajax({
+                url: action,
+                method: 'POST',
+                processData: false,
+                contentType: false,
+                data: formData,
+            }).done(function(data) {
+                formStateEls.hide();
+                form.find('> *').fadeOut();
+                form.find('[' + formStateName + '=success]').stop(1).fadeIn();
+            }).fail(function(data) {
+                formStateEls.hide();
+                form.find('[' + formStateName + '=error]').stop(1).fadeIn().delay(3000).fadeOut();
+            });
+        });
+    </script>
+</html>
